@@ -5,17 +5,17 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.transaction.support.TransactionSynchronizationManager;
 
 @Service
-public class SelfInvocationPizzaService {
+public class SelfInvocationParentService {
 
-    //문제
-    // eatPizza 메소드 내의 pizza가 호출되면
+    // 문제
+    // getParent 메소드 내의 parent가 호출되면
     // 새로운 트랜잭션이 열릴까요?
-    public boolean eatPizza() {
-        return this.pizza();
+    public boolean getParent() {
+        return this.parent();
     }
 
     @Transactional
-    public boolean pizza() {
+    public boolean parent() {
         boolean isActive = TransactionSynchronizationManager.isActualTransactionActive();
         System.out.println("Current Transaction Active: " + isActive);
         return isActive;

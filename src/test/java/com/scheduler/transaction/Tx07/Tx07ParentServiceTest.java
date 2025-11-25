@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThatCode;
 class Tx07ParentServiceTest {
 
     @Autowired
-    Tx07ParentService tx07ParentService;
+    private Tx07ParentService tx07ParentService;
 
     @Test
     @DisplayName("REQUIRES_NEW인 자식이 롤백되어도, 부모가 예외를 catch하면 부모는 정상 커밋된다")

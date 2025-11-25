@@ -13,7 +13,9 @@ public class Tx03ParentService {
     @Transactional
     public void getParent() {
         try {
+            System.out.println("Before getChild");
             parent();
+            System.out.println("After getChild");
         } catch (Exception e) {
             //error ignore
         }
@@ -22,6 +24,7 @@ public class Tx03ParentService {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void parent() {
+        System.out.println("Before Exception");
         throw new RuntimeException("UncheckedException : RuntimeException");
     }
 }

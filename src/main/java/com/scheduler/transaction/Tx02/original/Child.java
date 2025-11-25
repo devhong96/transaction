@@ -9,13 +9,13 @@ public class Child extends Parent {
 
     @Override
     @Transactional
-    public void cook() {
+    public void getChild() {
         System.out.println("== [자식] 트랜잭션 시작됨? "
                 + TransactionSynchronizationManager.isActualTransactionActive());
 
         // 부모의 기능을 그대로 씁니다.
-        super.cook();
+        super.getChild();
 
-        System.out.println("== [자식] 요리 끝 (커밋 예정) ==");
+        System.out.println("== [자식] 콜 끝 (커밋 예정) ==");
     }
 }

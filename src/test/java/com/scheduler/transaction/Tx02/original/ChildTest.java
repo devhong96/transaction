@@ -19,7 +19,7 @@ class ChildTest {
 
         // When
         System.out.println("====== 테스트 시작 ======");
-        child.cook();
+        child.getChild();
         System.out.println("====== 테스트 종료 ======");
 
         // Then

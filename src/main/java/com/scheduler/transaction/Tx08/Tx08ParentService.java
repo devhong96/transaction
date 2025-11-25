@@ -28,7 +28,7 @@ class Tx08ChildService {
 
     @Transactional(propagation = Propagation.REQUIRES_NEW)
     public void getChild() {
-        System.out.println("logic");
+        System.out.println("child");
     }
 }
 

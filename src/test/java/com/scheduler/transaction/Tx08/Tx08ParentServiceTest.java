@@ -11,7 +11,7 @@ import static org.assertj.core.api.Assertions.assertThatThrownBy;
 class Tx08ParentServiceTest {
 
     @Autowired
-    Tx08ParentService tx08ParentService;
+    private Tx08ParentService tx08ParentService;
 
     @Test
     @DisplayName("자식(REQUIRES_NEW)은 먼저 성공해서 커밋되고, 부모는 나중에 예외가 발생하여 롤백된다")

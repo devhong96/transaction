@@ -21,14 +21,16 @@ public class Tx05ParentService {
 
         parent();
         try {
+            System.out.println("Before getChild");
             childService.getChild();
+            System.out.println("After getChild");
         } catch (Exception e) {
             // error ignore
         }
     }
 
     public void parent() {
-        System.out.println("parent");
+        System.out.println("Out Of try-catch block");
     }
 
 }
@@ -36,6 +38,7 @@ public class Tx05ParentService {
 @Service
 class Tx05ChildService {
     public void getChild() {
+        System.out.println("Before Exception");
         throw new RuntimeException("Unchecked Exception : RuntimeException");
     }
 }
